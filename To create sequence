@@ -1,0 +1,43 @@
+to create sequence:
+
+create sequence st_sq start with 1 increment by 1 ;
+
+create sequence emp_sq start with 1 increment by 1 ;
+
+create table emp (emp_id int primary key, name varchar2(20));
+
+insert into emp values (emp_sq.nextval, 'x3');
+insert into emp values (emp_sq.nextval, 'x4');
+insert into emp values (emp_sq.nextval, 'x5');
+insert into emp values (emp_sq.nextval, 'x6');
+insert into emp values (emp_sq.nextval, 'x7');
+insert into emp values (emp_sq.nextval, 'x8');
+insert into emp values (emp_sq.nextval, 'x9');
+select * from tab;
+
+to add field to emp:
+alter table emp add mobile number;
+
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'abc', 9456687534); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'arc', 9456347984); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'erc', 9456347344); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'tyv', 9456346544); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'bnv', 9456376544); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'cds', 9456334567); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'edc', 1234547534); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'tgb', 9678907534); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'ijb', 9434567894); 
+insert into emp (emp_id, name, mobile) values (emp_sq.nextval, 'ijg', 9456345678); 
+select * from emp;
+
+truncate table emp;
+select * from emp;
+drop sequence emp_sq;
+create sequence emp_sq start with 1 increment by 1;
+insert into emp values (emp_sq.nextval, 'x3', 4567892314);
+insert into emp values (emp_sq.nextval, 'x4', 2345233456);
+insert into emp values (emp_sq.nextval, 'x5', 7685431254);
+insert into emp values (emp_sq.nextval, 'x6', 5647382910);
+insert into emp values (emp_sq.nextval, 'x7', 3425167089);
+insert into emp values (emp_sq.nextval, 'x8', 1213141516);
+insert into emp values (emp_sq.nextval, 'x9', 4532527675);
