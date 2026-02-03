@@ -57,3 +57,17 @@ insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'edc', 1
 insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'tgb', 9678907533, 234312); 
 insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'ijb', 9434567894, 234375); 
 insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'ijg', 9456345678, 345534); 
+SQL> select * from emp;
+
+    EMP_ID NAME                     MODILE     MOBILE    PINCODE
+---------- -------------------- ---------- ---------- ----------
+         1 abc                             9456687534     340034
+         2 arc                             9456347984     343334
+         3 erc                             9456347344     332345
+         4 tyv                             9456346544     346734
+         5 bnv                             9456376544     347809
+         6 cds                             9456334567     347878
+         7 edc                             1234547534     123454
+         8 tgb                             9678907533     234312
+         9 ijb                             9434567894     234375
+        10 ijg                             9456345678     345534
