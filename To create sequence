@@ -41,3 +41,19 @@ insert into emp values (emp_sq.nextval, 'x6', 5647382910);
 insert into emp values (emp_sq.nextval, 'x7', 3425167089);
 insert into emp values (emp_sq.nextval, 'x8', 1213141516);
 insert into emp values (emp_sq.nextval, 'x9', 4532527675);
+
+
+
+Add a new column PINCODE with not null constraints to the above existing table.  
+alter table emp add pincode int not null;
+
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'abc', 9456687534, 340034); 
+insert into emp (emp_id, name, mobile,  PINCODE) values (emp_sq.nextval, 'arc', 9456347984, 343334); 
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'erc', 9456347344, 332345); 
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'tyv', 9456346544, 346734); 
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'bnv', 9456376544, 347809); 
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'cds', 9456334567, 347878); 
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'edc', 1234547534, 123454); 
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'tgb', 9678907533, 234312); 
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'ijb', 9434567894, 234375); 
+insert into emp (emp_id, name, mobile, PINCODE) values (emp_sq.nextval, 'ijg', 9456345678, 345534); 
