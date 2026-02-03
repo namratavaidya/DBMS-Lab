@@ -1,0 +1,23 @@
+avg(i.salary)
+a) 
+select avg(i.salary)  as avg_salary from instructor I join Department d on i.dept_id=d.dept_id where d.name='Computer Science';
+
+b)   Find the average salary of instructor int he 
+select avg(i.salary)  as avg_salary from department D join Instructor i on i.dept_id=d.dept_id ;
+
+select d.name as dept_name, avg(i.salary) as avg_salary from department D join Instructor I on d.dept_id=i.dept_id group by d.name;
+
+c ) 
+select sum(salary) as total from instructor where salary > 30000;
+
+e) 
+select * from department where lower(name) like '%sci%';
+
+select * from department where name like '%Physics%';
+
+f)
+select length(name) as total_length from instructor;
+
+select length(name) as total_length from instructor group by name;
+
+select sum(length(name)) as total_length from instructor;
