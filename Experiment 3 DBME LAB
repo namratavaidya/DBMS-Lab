@@ -21,3 +21,56 @@ select length(name) as total_length from instructor;
 select length(name) as total_length from instructor group by name;
 
 select sum(length(name)) as total_length from instructor;
+
+ADD HIREDATE IN DATE FORMAT:
+
+alter table instructor add hiredate date;
+
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary, HireDate) VALUES (9, 'John Doe', 1, 'Y', 80000, DATE '2021-03-01');
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary, HireDate) VALUES (10, 'Jane Smith', 1, 'N', 75000, DATE '2018-06-30');
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary, HireDate) VALUES (11, 'Bob Johnson', 2, 'Y', 82000, DATE '2023-11-01');
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary) VALUES (12, 'Alice Brown', 2, 'N', 76000);
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary) VALUES (13, 'Charlie Davis', 3, 'Y', 81000);
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary) VALUES (14, 'Eva Wilson', 3, 'N', 77000);
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary) VALUES (15, 'Frank Miller', 4, 'Y', 79000);
+
+select * from instructor;
+
+select * from instructor where hiredate = date '2018-06-30';
+
+DISPLAY NAMES OF INSTRUCTORS WORKING FOR THE PAST 5 YEARS
+select * from instructor where hiredate >= add_months(sysdate, -60);
+
+
+select * from instructor where hiredate = add_months(sysdate, -60);
+
+
+select * from instructor where hiredate <= add_months(sysdate, -60);
+
+select * from instructor where hiredate > add_months(sysdate, -60);
+
+display the list of instructor who have joined before 30th June 2025 or after 31st dec 2019
+
+select * from instructor where hiredate < date '2025-06-30' and hiredate > date '2019-12-31';
+
+Display the name of those instructors who are going to retire 01-Jan-26, If the maximum job period is 5 years. 
+
+select * from instructor where add_months (hiredate, 60) < date '2026-01-01';
+select * from instructor where hiredate = add_months(sysdate, -60) and hiredate < date '2026-01-01';
+
+Display those instructors whose salary contains as least 4 digits: 
+
+select name, salary from instructor where length(salary) >= 4;
+
+insert into instructor values (12, 'xcyzcd', 1, 'N', 750, date '2026-01-01');
+
+Print a list of instructors displaying 'Less Salary' if less than 72000 if exactly 72000 display as 'Exact Salary' and if greater than 
+
+select name, salary,
+	case 
+		when salary < 72000 then 'less salary'
+		when salary = 72000 then 'exact salary'
+		else 'more salary'
+		end as salary_catagory
+	from instructor;
+
