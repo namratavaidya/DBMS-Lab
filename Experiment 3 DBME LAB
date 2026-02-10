@@ -74,3 +74,57 @@ select name, salary,
 		end as salary_catagory
 	from instructor;
 
+Display names of all the instructors concatenated with their department names.
+
+select i.name || ' - ' || d.name from instructor i join department d on i.dept_id=d.dept_id;
+SQL> select i.name || ' - ' || d.name from instructor i join department d on i.dept_id=d.dept_id;
+
+I.NAME||'-'||D.NAME
+--------------------------------------------------------------------------------
+John Doe - Computer Science
+Jane Smith - Computer Science
+Jane Smith - Computer Science
+John Doe - Computer Science
+xyz - Computer Science
+Alice Brown - Mathematics
+Bob Johnson - Mathematics
+Alice Brown - Mathematics
+Bob Johnson - Mathematics
+Charlie Davis - Physics
+Charlie Davis - Physics
+
+I.NAME||'-'||D.NAME
+--------------------------------------------------------------------------------
+Eva Wilson - Physics
+Eva Wilson - Physics
+Frank Miller - Biology
+Frank Miller - Biology
+
+15 rows selected.
+
+
+Retrieve distinct number of instructor from each department : 
+
+select * from instructor i join department d on i.dept_id=d.dept_id;
+
+select count(*) from instructor i join department d on i.dept_id=d.dept_id;
+
+select count(*) from instructor i join department d on i.dept_id=d.dept_id group by d.name;
+
+Retrieve distinct number of instructor from each department :
+
+select * from instructor i join department d on i.dept_id=d.dept_id;
+
+select count(*) from instructor i join department d on i.dept_id=d.dept_id;
+
+select count(*), d.name from instructor i join department d on i.dept_id=d.dept_id group by d.name;
+
+select count(Instructor_id) as inst_each_dept, d.name from instructor i join department d on i.dept_id=d.dept_id group by d.name;
+
+select name, dept_id from instructor;
+
+select count(distinct Instructor_id) as inst_each_dept, d.name from instructor i join department d on i.dept_id=d.dept_id group by d.name;
+
+Find the names of all instructor whose salary is greater than as least one instructor in the biology department.
+
+select i.name, i.salary from instructor i join department d on i.dept_id=d.dept_id where i.salary > (select salary from instructor where dept_id=4 );
