@@ -34,3 +34,34 @@ INSERT INTO emp (emp_no, birth_date, first_name, last_name, gender, hire_date, s
 INSERT INTO emp (emp_no, birth_date, first_name, last_name, gender, hire_date, salary, job, deptno, manager_id) VALUES (7876, '1962-01-14', 'George', 'Black', 'M', '1989-01-20', 1100.00, 'CLERK', 40, 7566);
 INSERT INTO emp (emp_no, birth_date, first_name, last_name, gender, hire_date, salary, job, deptno, manager_id) VALUES (7844, '1965-09-28', 'Diana', 'White', 'F', '1992-05-21', 2950.00, 'SALESMAN', 30, 7654);
 INSERT INTO emp (emp_no, birth_date, first_name, last_name, gender, hire_date, salary, job, deptno, manager_id) VALUES (7900, '1972-06-19', 'Bob', 'King', 'M', '1991-08-18', 850.00, 'CLERK', 10, 7839);
+
+
+select First_name from emp where name like 'a%' and length(first_name) >= 3;
+
+
+select name, location from departments where location='dallas' or location='new york' or location='chicago';
+
+select name, location from departments where lower(location) in ('dalla' , 'new york', 'chicago');
+
+
+Display the names of employee 
+
+
+Display the name of employees who are not working as managers.
+
+select first_name from emp where lower(job != 'manager';
+
+Displays the name of emp who earns highest salary 
+
+select first_name, salary from emp where salary=(salary max (salary) from emp);
+
+Display the employee number and name of employee working as CLERK and earning  highest salary among CLERKS.
+
+select first_name, salary, jod from emp;
+
+select emp_number, first_name, salary from emp where salary=(select max(salary) from emp where lower(job)='clerk');
+
+Display the names of clerk who earn salary more than that of Bob of that of sal lesser than that of James.
+
+
+
