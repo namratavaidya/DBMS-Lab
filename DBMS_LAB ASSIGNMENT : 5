@@ -69,10 +69,14 @@ INSERT INTO Assignments (emp_id, proj_id, hours_worked) VALUES (7, 202, 45);
 
 
 Execise : 
-1. INNER JOINS
+1. INNER JOINS ::: real life example in our day to day life is it will show only permanant faculty nMES ....
 Objective : Retrieve and display the list of employees along with their department names ::
 
 select e.emp_name, d.dept_name FROM Employees e INNER JOIN Departs d ON e.dept_id=d.dept_id;
 
 2. LEFT JOIN 
-Objective : Display all employees and their assigned projects , including employees
+Objective : Display all employees and their assigned projects , including employees 
+
+
+
+3. SELF JOIN ::: Compare multiple rows from the same table..
