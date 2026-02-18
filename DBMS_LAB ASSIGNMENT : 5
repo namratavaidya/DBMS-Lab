@@ -71,12 +71,20 @@ INSERT INTO Assignments (emp_id, proj_id, hours_worked) VALUES (7, 202, 45);
 Execise : 
 1. INNER JOINS ::: real life example in our day to day life is it will show only permanant faculty nMES ....
 Objective : Retrieve and display the list of employees along with their department names ::
-
 select e.emp_name, d.dept_name FROM Employees e INNER JOIN Departs d ON e.dept_id=d.dept_id;
 
 2. LEFT JOIN 
 Objective : Display all employees and their assigned projects , including employees 
+select e.emp_name, p.proj_name FROM Employees e LEFT JOIN Assignments a ON e.emp_id=a.emp_id LEFT JOIN Projects p ON a.proj_id=p.proj_id;
 
+3. RIGHT JOIN :
+select p.proj_name,e.emp_name FROM Projects p RIGHT JOIN Assignments a ON p.proj_id=a.proj_id RIGHT JOIN Employees e ON a.emp_id=e.emp_id;
 
+4. FULL OUTER JOIN : 
+select e.emp_name,d.dept_name FROM Employees e FULL OUTER JOIN Departs d ON e.dept_id=d.dept_id;
 
-3. SELF JOIN ::: Compare multiple rows from the same table..
+5. SELF JOIN ::: Compare multiple rows from the same table..
+select e.emp_name AS Employees,m.emp_name AS Manager FROM Employees e LEFT JOIN Employees m ON e.manager_id=m.emp_id;
+
+6. CROSS JOIN :
+select e.emp_name,p.proj_name FROM Employees e CROSS JOIN Projects p;
