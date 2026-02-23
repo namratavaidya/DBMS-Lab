@@ -1,0 +1,66 @@
+create or Replace procedure hello_world
+As 
+Begin
+	DBMS_OUTPUT.PUT_LINE('hello world');
+End;
+/
+
+
+
+create or Replace procedure Additions1
+As
+a  number;
+b  number;
+begin
+  a:=5;
+  b:=10;
+  DBMS_OUTPUT.PUT_LINE('Result =  ' || (a+b) );
+end;
+/
+
+
+Byy taking Users input ::
+
+create or Replace procedure Addition1(
+  a In Number,
+  b In Number)
+As
+Begin
+  DBMS_OUTPUT.PUT_LINE('Result =  ' || (a+b) );
+End;
+/
+Exec Addition1(5,10);
+
+
+
+
+print the addition of 2 numbers ::
+
+create or Replace procedure Additions2(
+  a In Number,
+  b In Number,
+  c Out Number)
+As
+Begin
+  c:=(a+b);
+  DBMS_OUTPUT.PUT_LINE('Result =  ' || c );
+End;
+/
+variable c1 Number;
+Exec Addition1(5,10, :c1);
+Result =  15
+
+
+
+
+Swapping without using third variable ::
+
+create or Replace procedure Additions3(
+  a In Number,
+  b In Number)
+As
+Begin
+  a:=
+
+
+Find the largest amoung 3 values :: 
