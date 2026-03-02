@@ -1,0 +1,38 @@
+Experiment 7
+
+
+Sum of first 10 numbers Using while loop 
+ 
+create OR REPLACE PROCEDURE SumFirst10Numbers_WhileLoop AS i Number := 1;
+  2  sum1 NUMBER := 0;
+  3  BEGIN
+  4   WHILE i <= 10 LOOP
+  5    sum1 := sum1 + i;
+  6    i := i+1;
+  7   END LOOP;
+  8   DBMS_OUTPUT.PUT_LINE('Sum of first 10 numbers using WHILE loop:'||sum1);
+  9  END;
+ 10  /
+
+
+
+Sum of first 10 even numbers using a FOR loop 
+
+create OR REPLACE PROCEDURE SumFirst10Numbers_ForLoop AS sum1 NUMBER := 0;
+  2  BEGIN
+  3   FOR i IN 1..10LOOP
+  4    sum1 := sum1 + (2+i);
+  5   END LOOP;
+  6   DBMS_OUTPUT.PUT_LINE('Sum of first 10 even numbers using FOR loop:'||sum1);
+  7  END;
+  8  /
+
+
+Execution Example:
+
+Call the procedures in PL/SQL Block:
+
+BEGIN
+ SumFirst10Numbers_WhileLoop;
+END;
+/
